@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #ff69b4, #ffc0cb, #fff0f5);
+    min-height: 100vh;
+    color: #333;
+}
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;   
+    background-color:#ff69b4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 28px;
+    color: #f1eff0;
+    font-weight: 600;
+    text-shadow: 
+        1px 1px 0 #ff1493,
+        2px 2px 0 #ff1493,
+        3px 3px 0 #d6006e,
+        4px 4px 0 #d6006e,
+        5px 5px 5px rgba(0,0,0,0.3);
+}
+
+header nav {
+    display: flex;
+    gap: 24px;
+    padding-right: 40px;
+}
+
+header nav a:hover {
+    color: #ff1493;
+    transform: scale(1.1);
+}
+
+header nav a,
+header nav a:visited {
+    text-decoration: none;
+    transition: all 0.2s ease;
+    color: #ffffff;
+}
+
+
+
+.hero {
+    background-image: url('../assets/background_hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 500px;
+    padding: 40px;
+}
+
+.hero h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.hero p {
+    color: white;
+    font-size: 20px;
+}
+
+.hero h1,
+.hero p {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#noticias h2 {
+    font-family: 'Fredoka', sans-serif;
+    color: #ff1493;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 12px;
+}
+
+#noticias h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ff69b4;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.noticias-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card-noticia {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-noticia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
