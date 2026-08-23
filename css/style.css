@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     color: #333;
 }
-header {
+header, footer {
     display: flex;
     justify-content:space-between;
     align-items: center;   
@@ -80,7 +80,7 @@ header nav a:visited {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-#noticias h2 {
+#noticias h2, #bonecas h2 {
     font-family: 'Fredoka', sans-serif;
     color: #ff1493;
     font-size: 32px;
@@ -89,7 +89,7 @@ header nav a:visited {
     margin-bottom: 12px;
 }
 
-#noticias h2::after {
+#noticias h2::after, #bonecas h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -106,22 +106,23 @@ header nav a:visited {
     padding: 40px;
 }
 
-.card-noticia {
+.card-noticia, .card-categoria {
     flex: 1;
     background-color: white;
     border-radius: 12px;
     padding: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
-.card-noticia h3 {
+.card-noticia h3, .card-categoria h3, #contato h3 {
     font-family: 'Fredoka', sans-serif;
     color: #ff1493;
     font-size: 20px;
     margin: 12px 0;
 }
 
-.card-noticia img {
+.card-noticia img, .card-categoria img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -149,4 +150,48 @@ header nav a:visited {
 .btn-ver-mais:hover {
     background-color: #ff1493;
     color: white;
+}
+
+.categorias-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.card-categoria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.info-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.icones-redes i {
+    font-size: 24px;
+    color: #f858ad;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.icones-redes a {
+    text-decoration: none;
+}
+
+.icones-redes i:hover {
+    color: #ff69b4;
+    transition: color 0.2s ease;
 }
