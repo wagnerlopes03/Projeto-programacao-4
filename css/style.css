@@ -157,7 +157,6 @@
   color: var(--color-text-main);
 }
 
-/* FOOTER (Pode ir para o global.css se repetir em todas as telas) */
 footer {
   background-color: var(--color-primary);
   color: var(--color-white);
