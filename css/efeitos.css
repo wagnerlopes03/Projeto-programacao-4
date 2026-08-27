@@ -1,0 +1,37 @@
+.brilho {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #fff0f7;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px #ff69b4;
+    z-index: 0;
+}
+
+.b1 { top: 10%; left: -5%; animation: passar 20s linear infinite 3s; }
+.b2 { top: 35%; left: -5%; animation: passar 16s linear infinite 4s; }
+.b3 { top: 55%; left: -5%; animation: passar 15s linear infinite 6s; }
+.b4 { top: 75%; left: -5%; animation: passar 20s linear infinite 1s; }
+.b5 { top: 90%; left: -5%; animation: passar 25s linear infinite 8s; }
+.b6  { top: 5%;  left: -5%; animation: passar 19s linear infinite 0s; }
+.b7  { top: 45%; left: -5%; animation: passar 18s linear infinite 1s; }
+.b8  { top: 65%; left: -5%; animation: passar 16s linear infinite 10s; }
+.b9  { top: 85%; left: -5%; animation: passar 21s linear infinite 5s; }
+.b10 { top: 20%; left: -5%; animation: passar 17s linear infinite 12s; }
+
+@keyframes passar {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(110vw) translateY(-40px);
+        opacity: 0;
+    }
+}
