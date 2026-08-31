@@ -6,68 +6,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/listagem.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
     <title>Barbie</title>
 </head>
 
-<body>
+<body class="pagina-bonecas-body">
+    <main>
     <header>
-        <h1>Barbielândia</h1>
+        <a href="../../index.html" class="logo">Barbie News</a>
         <nav>
-            <a href="../../index.html">Início</a>
-            <a href="cadastro-boneca.html">Cadastrar bonecas</a>
-            <a href="listagem.html">Listar Bonecas</a>
-            <a href="wiki.html"> Curiosidades</a>
+            <a href="../../index.html">Início</a> 
+            <a href="listagem.html">Barbies</a> 
+            <a href="../noticias/noticias.html">Notícias</a> 
+            <a href="pages/auth/login.html">Login</a> 
         </nav>
     </header>
-    <section id="bonecas">
-        <h2>Lista de Bonecas Barbie</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Boneca</th>
-                    <th>Preço</th>
-                    <th>Tema</th>
-                </tr>
-            </thead>
-            <tbody>
+    <section id="pagina-bonecas">
+        <h1 class="titulo-pagina">Catálogo de Barbies</h1>
+        <div class="busca-container">
+            <input type="text" class="input-busca" placeholder="Buscar por nome ou tema...">
+            <i class="fa-solid fa-magnifying-glass icone-busca"></i>
+        </div>
+        <div class="filtros-categoria">
+            <button class="filtro-pill ativo">Todas</button>
+            <button class="filtro-pill">👑 Princesa</button>
+            <button class="filtro-pill">🧜‍♀️ Sereia</button>
+            <button class="filtro-pill">💃 Dança</button>
+            <button class="filtro-pill">💼 Profissões</button>
+            <button class="filtro-pill">👗 Moda</button>
+            <button class="filtro-pill">🌍 Aventura</button>
+        </div>
+        <div class="grid-catalogo">
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie of Swan Lake Odette">
+                </div>
+                <span class="card-numero">Nº 001</span>
+                <h3>Barbie of Swan Lake (Odette)</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Princesa</span>
+                    <span class="tag-disponivel indisponivel">Descontinuada</span>
+                </div>
+            </article>
 
-                <tr>
-                    <td>Barbie Princesa</td>
-                    <td>R$ 119,90</td>
-                    <td>Princesa</td>
-                </tr>
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Signature 65 Anos">
+                </div>
+                <span class="card-numero">Nº 002</span>
+                <h3>Barbie Signature Aniversário de 65 Anos</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Colecionável</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
 
-                <tr>
-                    <td>Barbie Sereia</td>
-                    <td>R$ 99,90</td>
-                    <td>Sereia</td>
-                </tr>
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Bailarina Loira">
+                </div>
+                <span class="card-numero">Nº 003</span>
+                <h3>Barbie Bailarina Vestido Rosa</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Dança</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
 
-                <tr>
-                    <td>Barbie Bailarina</td>
-                    <td>R$ 89,90</td>
-                    <td>Dança</td>
-                </tr>
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Astronauta">
+                </div>
+                <span class="card-numero">Nº 004</span>
+                <h3>Barbie Astronauta</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Profissões</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
 
-                <tr>
-                    <td>Barbie Médica</td>
-                    <td>R$ 109,90</td>
-                    <td>Profissões</td>
-                </tr>
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Médica">
+                </div>
+                <span class="card-numero">Nº 005</span>
+                <h3>Barbie Médica</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Profissões</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
 
-                <tr>
-                    <td>Barbie Fashionista</td>
-                    <td>R$ 79,90</td>
-                    <td>Moda</td>
-                </tr>
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Sereia Cor Mágica">
+                </div>
+                <span class="card-numero">Nº 006</span>
+                <h3>Barbie Sereia Cor Mágica</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Sereia</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
 
-                <tr>
-                    <td>Barbie Aventureira</td>
-                    <td>R$ 104,90</td>
-                    <td>Aventura</td>
-                </tr>
-            </tbody>
-        </table>
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Color Reveal">
+                </div>
+                <span class="card-numero">Nº 007</span>
+                <h3>Barbie Color Reveal</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Moda</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
+
+            <article class="card-boneca">
+                <div class="card-boneca-img">
+                    <img src="" alt="Barbie Holiday 2026">
+                </div>
+                <span class="card-numero">Nº 008</span>
+                <h3>Barbie Holiday 2026</h3>
+                <div class="card-tags">
+                    <span class="tag-categoria">Colecionável</span>
+                    <span class="tag-disponivel disponivel">Disponível</span>
+                </div>
+            </article>
+        </div>
+        <div class="cta-forum">
+            <h3>Tem uma Barbie querida que não está aqui?</h3>
+            <p>Compartilhe sua coleção e converse com outros fãs no nosso fórum!</p>
+            <a href="../forum/forum.html" class="btn-cta">Ir para o Dreamhouse Chat</a>
+        </div>
     </section>
     </main>    
     <footer>
