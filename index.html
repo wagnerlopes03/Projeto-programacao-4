@@ -16,14 +16,15 @@
     <header>
         <div class="logo">Barbie News</div>
         <nav>
-            <a href="index.html">Início</a> 
-            <a href="pages/catalogo/listagem.html">Barbies</a> 
-            <a href="pages/noticias/noticias.html">Notícias</a> 
-            <a href="pages/auth/login.html">Login</a> 
+            <a href="index.html">Início</a>
+            <a href="pages/catalogo/listagem.html">Barbies</a>
+            <a href="pages/noticias/noticias.html">Notícias</a>
+            <a href="pages/auth/login.html">Login</a>
         </nav>
     </header>
     <main>
         <section id="inicio">
+            <div class="glitter-container"></div>
             <div class="hero">
                 <h1>Bem-vindo ao mundo da nossa diva: A Barbie!</h1>
                 <p>Explore as últimas novidades, lançamentos e curiosidades sobre a icônica boneca.</p>
@@ -33,30 +34,112 @@
             <h2>Últimas Notícias</h2>
             <div class="noticias-container">
                 <article class="card-noticia">
-                    <img src="../assets/barbie_autismo.jpg" alt="Barbie com autismo">
+                    <img src="assets/barbie_autismo.jpg" alt="Barbie com autismo">
                     <h3>Lançamento da primeira Barbie com autismo</h3>
-                    <p>A Mattel lança a primeira boneca com autismo, promovendo inclusão e diversidade no mundo das brincadeiras.</p>
-                    <a href="#" class="btn-ver-mais">Ver mais</a>
+                    <p>
+                        A Mattel lança a primeira boneca com autismo,
+                        promovendo inclusão e diversidade no mundo das brincadeiras.
+                    </p>
+                    <div class="texto-completo">
+                        <p>
+                            A Mattel lançou a primeira Barbie com autismo,
+                            desenvolvida para representar pessoas dentro do espectro
+                            autista e ampliar a diversidade presente na linha Barbie.
+                        </p>
+                        <p>
+                            A boneca foi desenvolvida com características que buscam
+                            representar algumas experiências relacionadas ao autismo,
+                            contribuindo para que mais crianças possam se sentir
+                            representadas durante as brincadeiras.
+                        </p>
+                        <p>
+                            A iniciativa faz parte dos esforços da empresa para ampliar
+                            a representação e a inclusão em seus produtos.
+                        </p>
+                    </div>
+                    <button class="btn-ver-mais">
+                        Ver mais
+                    </button>
                 </article>
                 <article class="card-noticia">
                     <img src="../assets/sustentabilidade.jpg" alt="Barbie sustentável">
                     <h3>Barbie e a Sustentabilidade</h3>
-                    <p>A Mattel anuncia novas iniciativas para tornar a produção da Barbie mais sustentável e amiga do meio ambiente.</p>
-                    <a href="#" class="btn-ver-mais">Ver mais</a>
+                    <p>
+                        A Mattel anuncia novas iniciativas para tornar a produção da Barbie
+                        mais sustentável e amiga do meio ambiente.
+                    </p>
+                    <div class="texto-completo">
+                        <p>
+                            A Mattel vem desenvolvendo iniciativas para reduzir
+                            o impacto ambiental de seus produtos e tornar sua
+                            produção mais sustentável.
+                        </p>
+
+                        <p>
+                            Entre as iniciativas estão ações relacionadas à utilização
+                            de materiais reciclados e à redução do uso de plástico
+                            em determinadas embalagens.
+                        </p>
+
+                        <p>
+                            A empresa afirma que pretende continuar trabalhando
+                            para diminuir o impacto ambiental de sua produção.
+                        </p>
+                    </div>
+
+                    <button class="btn-ver-mais">
+                        Ver mais
+                    </button>
                 </article>
                 <article class="card-noticia">
                     <img src="../assets/barbie_convention.jpg" alt="Evento Barbie Collector">
                     <h3>Evento Especial: Barbie Collector</h3>
-                    <p>Confira o evento exclusivo para colecionadores de Barbies e descubra peças raras e edições limitadas.</p>
-                    <a href="#" class="btn-ver-mais">Ver mais</a>
+                    <p>
+                        Confira o evento exclusivo para colecionadores de Barbies e
+                        descubra peças raras e edições limitadas.
+                    </p>
+                    <div class="texto-completo">
+                        <p>
+                            O evento Barbie Collector reúne colecionadores e fãs
+                            da boneca para apresentar modelos especiais e peças
+                            que marcaram a história da Barbie.
+                        </p>
+
+                        <p>
+                            Durante o evento, os participantes podem conhecer
+                            edições limitadas, modelos raros e diferentes coleções.
+                        </p>
+
+                        <p>
+                            O encontro também proporciona uma oportunidade para
+                            os colecionadores compartilharem suas experiências
+                            e conhecerem outras pessoas interessadas pelo universo Barbie.
+                        </p>
+                    </div>
+                    <button class="btn-ver-mais">
+                        Ver mais
+                    </button>
                 </article>
             </div>
         </section>
+        <div id="modal-noticia" class="modal-noticia">
+            <div class="conteudo-modal">
+                <button id="fechar-modal" class="fechar-modal">
+                    &times;
+                </button>
+                <img id="modal-imagem" src="" alt="">
+                <h2 id="modal-titulo"></h2>
+                <div id="modal-texto"></div>
+                <a id="btn-pagina-noticias" href="pages/noticias/noticias.html" class="btn-pagina-noticias">
+                    Leia mais notícias
+                </a>
+            </div>
+        </div>
         <section id="bonecas">
             <h2>Categorias</h2>
             <div class="categorias-container">
                 <a href="pages/catalogo/listagem.html" class="card-categoria">
-                    <img src="../assets/barbie_fashionista.jpg" alt="Categoria Fashionista">
+                    <img src="assets/barbie_fashionista.jpg" alt="Categoria Fashionista">
                     <h3>Fashionista</h3>
                 </a>
                 <a href="pages/catalogo/listagem.html" class="card-categoria">
@@ -92,5 +175,7 @@
     <footer>
         <p>&copy; 2026 Barbie News - Todos os direitos reservados.</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
