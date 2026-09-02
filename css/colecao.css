@@ -1,0 +1,132 @@
+.pagina-colecao-body {
+    background-color: var(--color-pink-soft);
+}
+
+#pagina-colecao {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.colecao-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.coluna-esquerda {
+    flex-shrink: 0;
+    width: 320px;
+}
+
+.coluna-direita {
+    flex: 1;
+}
+
+.titulo-colecao {
+    font-family: var(--font-display);
+    color: var(--color-primary-dark);
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.subtitulo-colecao {
+    font-family: var(--font-main);
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.card-colecao select,
+.campo-form select {
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--color-white);
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+.campo-form select:focus {
+    border-color: var(--color-primary);
+}
+
+.campo-form textarea {
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 10px;
+    outline: none;
+    resize: vertical;
+    min-height: 70px;
+    transition: border-color 0.2s ease;
+}
+
+.campo-form textarea:focus {
+    border-color: var(--color-primary);
+}
+
+.campo-form input[type="file"] {
+    font-family: var(--font-main);
+    font-size: 13px;
+    padding: 8px;
+    border: 2px dashed var(--color-pink-light);
+    border-radius: 10px;
+    background-color: var(--color-pink-soft);
+    cursor: pointer;
+}
+
+.grid-colecao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-colecao {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(214, 0, 110, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-colecao:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(214, 0, 110, 0.2);
+}
+
+.card-colecao-img {
+    background-color: var(--color-pink-soft);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.card-colecao-img img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+}
+
+.card-colecao h3 {
+    font-family: var(--font-display);
+    color: var(--color-text-main);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.card-colecao .tag-categoria {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+}

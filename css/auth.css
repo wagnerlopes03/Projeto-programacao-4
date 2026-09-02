@@ -1,5 +1,6 @@
 #pagina-cadastro,
-#pagina-login {
+#pagina-login,
+#pagina-senha {
     display: flex;
     justify-content: center;
     align-items: center;
