@@ -4,37 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/auth.css">
   <link rel="stylesheet" href="../../css/recuperar-senha.css">
-  <title>Barbie World - Recuperar Senha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+  <title>Hi Barbie - Recuperar Senha</title>
   
 </head>
-<body class="login-page">
-
-  <div class="login-container">
-    <div class="login-header">
-      <h1>Recuperar Senha</h1>
-      <p>Digite seu e-mail cadastrado para receber as instruções de redefinição.</p>
-    </div>
-
-    <form action="login.html" method="POST">
-      <div class="input-group">
-        <label for="email">E-mail</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="seuemail@exemplo.com" 
-          required
-        >
-      </div>
-
-      <button type="submit" class="btn-login">Enviar Link de Recuperação</button>
-    </form>
-
-    <div class="login-footer">
-      <p>Lembrou da senha? <a href="login.html">Voltar para o Login</a></p>
-      <p><a href="../../index.html" class="back-home">Voltar para a Página Inicial</a></p>
-    </div>
-  </div>
-</body>
+<body>
+    <header>
+        <a href="../../index.html" class="logo">Hi Barbie</a>
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../catalogo/listagem.html">Bonecas</a>
+            <a href="../noticias/noticias.html">Notícias</a>
+            <a href="../forum/forum.html">Dreamhouse Chat</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <main>
+      <section id="pagina-senha">
+          <div class="card-auth">
+              <h1>Recuperar Senha</h1>
+              <p class="subtitulo-auth">Digite seu e-mail cadastrado para receber as instruções de redefinição.</p>
+              <form action="login.html" method="POST">
+                  <div class="input-group">
+                  <label for="email">E-mail</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="seuemail@exemplo.com" 
+                    required
+                  >
+                </div>
+                <button type="submit" class="btn-login">Enviar Link de Recuperação</button>
+              </form>  
+            <p class="link-alternar">Lembrou da senha? <a href="login.html">Voltar para o Login</a></p>
+            <p class="link-alternar"><a href="../../index.html" class="back-home">Voltar para a Página Inicial</a></p>
+          </div>
+      </section>
+    </main>
+    <footer>
+          <p>&copy; 2026 Barbie News - Todos os direitos reservados.</p>
+    </footer>
+  </body>
 </html>

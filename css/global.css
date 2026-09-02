@@ -41,6 +41,7 @@ header {
   font-size: 28px;
   color: var(--color-logo-text);
   font-weight: 600;
+  text-decoration: none;
   text-shadow: 
     1px 1px 0 var(--color-primary-dark),
     2px 2px 0 var(--color-primary-dark),

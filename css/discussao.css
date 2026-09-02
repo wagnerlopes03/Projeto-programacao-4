@@ -1,0 +1,147 @@
+#pagina-discussao {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+.link-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    margin-bottom: 24px;
+    transition: gap 0.2s ease;
+}
+
+.link-voltar:hover {
+    gap: 12px;
+}
+
+.discussao-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.post-original {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 4px 12px rgba(214, 0, 110, 0.1);
+}
+
+.post-original h1 {
+    font-family: var(--font-display);
+    color: var(--color-text-main);
+    font-size: 26px;
+    margin: 12px 0;
+}
+
+.autor-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.autor-nome {
+    font-family: var(--font-main);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    font-size: 14px;
+}
+
+.autor-data {
+    font-family: var(--font-main);
+    color: #999;
+    font-size: 13px;
+}
+
+.post-texto {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-curtir {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-pink-soft);
+    color: var(--color-primary-dark);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-curtir:hover {
+    background-color: var(--color-pink-light);
+}
+
+.btn-curtir.pequeno {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.lista-respostas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-resposta {
+    background-color: var(--color-white);
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 12px rgba(214, 0, 110, 0.08);
+}
+
+.resposta-texto {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.caixa-resposta {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(214, 0, 110, 0.1);
+}
+
+.caixa-resposta h3 {
+    font-family: var(--font-display);
+    color: var(--color-primary-dark);
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.caixa-resposta textarea {
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 14px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 14px;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.caixa-resposta textarea:focus {
+    border-color: var(--color-primary);
+}

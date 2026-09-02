@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BarbieLândia - Login</title>
-  <link rel="stylesheet" href="../../css/global.css">
-  <link rel="stylesheet" href="../../css/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <title>Hi Barbie - Login</title>
 </head>
-<body class="login-page">
-  <div class="login-container">
-    <div class="login-header">
-      <h1>Barbie World</h1>
-      <p>Entre para acessar seu perfil de colecionador</p>
-    </div>
 
-    <form class="login-form" action="index.html" method="POST">
-      <div class="input-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-      </div>
+<body>
+    <header>
+        <a href="../../index.html" class="logo">Hi Barbie</a>
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../catalogo/listagem.html">Bonecas</a>
+            <a href="../noticias/noticias.html">Notícias</a>
+            <a href="../forum/forum.html">Dreamhouse Chat</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
 
-      <div class="input-group">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite uma senha" required>
-      </div>
+    <section id="pagina-login">
+        <div class="card-auth">
+            <h1>Bem-vinda de volta!</h1>
+            <p class="subtitulo-auth">Entre para acessar sua coleção e o Dreamhouse Chat.</p>
 
-      <div>
-        <a href="recuperar-senha.html" class="forgot-password">Esqueceu a senha?</a>
-      </div>
+            <form>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com">
 
-      <button type="submit" class="btn-login">Entrar</button>
-    </form>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Sua senha">
 
-    <div class="login-footer">
-      <p>Não tem uma conta? <a href="cadastro-usuario.html">Cadastre-se</a></p>
-      <p><a href="../../index.html" class="back-home">Voltar para a Página Inicial</a></p>
-    </div>
-  </div>
+                <button type="submit" class="btn-auth">Entrar</button>
+            </form>
+            <p class="link-alternar">Esqueceu a senha? <a href="recuperar-senha.html">Recupere!</a></p>
+            <p class="link-alternar">Não tem conta? <a href="cadastro-usuario.html">Cadastre-se</a></p>
+        </div>
+    </section>
 
+    <footer>
+        <p>&copy; 2026 Barbie News - Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

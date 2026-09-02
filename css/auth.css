@@ -1,0 +1,93 @@
+#pagina-cadastro,
+#pagina-login,
+#pagina-senha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    padding: 40px 20px;
+}
+
+.card-auth {
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(214, 0, 110, 0.15);
+    text-align: center;
+}
+
+.card-auth h1 {
+    font-family: var(--font-display);
+    color: var(--color-primary-dark);
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.subtitulo-auth {
+    font-family: var(--font-main);
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.card-auth form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card-auth label {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-text-main);
+    margin-bottom: 6px;
+    margin-top: 16px;
+}
+
+.card-auth input {
+    font-family: var(--font-main);
+    font-size: 15px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.card-auth input:focus {
+    border-color: var(--color-primary);
+}
+
+.btn-auth {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 28px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-auth:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.link-alternar {
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: #999;
+    margin-top: 20px;
+}
+
+.link-alternar a {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+}

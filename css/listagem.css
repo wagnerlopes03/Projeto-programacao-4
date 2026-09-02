@@ -1,138 +1,215 @@
-html {
-  height: 100%;
+.pagina-bonecas-body {
+    background: var(--color-pink-soft);
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
+#pagina-bonecas {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding-top: 40px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 20px 40px;
+.titulo-pagina {
+    font-family: var(--font-display);
+    color: var(--color-primary-dark);
+    font-size: 32px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-header h1 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  color: var(--color-logo-text);
-  font-weight: 600;
-  margin: 0;
-  text-shadow: 
-    1px 1px 0 var(--color-primary-dark),
-    2px 2px 0 var(--color-primary-dark),
-    3px 3px 0 var(--color-primary-deep),
-    4px 4px 0 var(--color-primary-deep),
-    5px 5px 5px rgba(0, 0, 0, 0.3);
+.titulo-pagina::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin: 12px auto 0;
+    border-radius: 2px;
 }
 
-header nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: var(--color-white);
+.busca-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
 }
 
-header nav a,
-header nav a:visited {
-  text-decoration: none;
-  transition: all 0.2s ease;
-  color: var(--color-white);
-  font-weight: 500;
+.input-busca {
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 16px;
+    padding: 14px 50px 14px 24px;
+    border: 2px solid var(--color-primary);
+    border-radius: 30px;
+    outline: none;
 }
 
-header nav a:hover {
-  color: var(--color-primary-dark);
-  transform: scale(1.1);
+.input-busca::placeholder {
+    color: #bbb;
 }
 
-#bonecas {
-  flex: 1;
-  width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+.icone-busca {
+    position: absolute;
+    right: 38px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    font-size: 18px;
+    pointer-events: none;
 }
 
-#bonecas h2 {
-  font-family: var(--font-display);
-  color: var(--color-primary-dark);
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 24px;
+.filtros-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
 }
 
-#bonecas h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: var(--color-primary);
-  margin: 10px auto 0;
-  border-radius: 2px;
+.filtro-pill {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-primary-dark);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: var(--color-white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(214, 0, 110, 0.12);
-  border: none !important;
+.filtro-pill:hover {
+    background-color: var(--color-pink-soft);
 }
 
-thead tr {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+.filtro-pill.ativo {
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
-th {
-  font-family: var(--font-display);
-  font-size: 16px;
-  padding: 16px;
-  text-align: left;
-  border: none !important;
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
 }
 
-tbody tr {
-  border-bottom: 1px solid var(--color-pink-soft);
-  transition: background-color 0.2s ease;
+.card-boneca {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(214, 0, 110, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-tbody tr:last-child {
-  border-bottom: none;
+.card-boneca:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(214, 0, 110, 0.2);
 }
 
-tbody tr:hover {
-  background-color: var(--color-pink-soft);
+.card-boneca-img {
+    background-color: var(--color-pink-soft);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
 }
 
-td {
-  padding: 14px 16px;
-  font-size: 15px;
-  color: var(--color-text-main);
-  border: none !important;
+.card-boneca-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
 }
 
-tbody td:nth-child(2) {
-  font-weight: 600;
-  color: var(--color-primary-dark);
+.card-numero {
+    font-family: var(--font-main);
+    font-size: 13px;
+    color: #999;
 }
 
-footer {
-  width: 100%;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  text-align: center;
-  padding: 20px;
-  margin-top: auto;
-  font-size: 14px;
+.card-boneca h3 {
+    font-family: var(--font-display);
+    color: var(--color-text-main);
+    font-size: 18px;
+    margin: 4px 0 12px;
+}
+
+.card-tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag-categoria {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.tag-disponivel {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.tag-disponivel.disponivel {
+    background-color: #d4f4dd;
+    color: #2e7d4f;
+}
+
+.tag-disponivel.indisponivel {
+    background-color: #f4d4d4;
+    color: #a02e2e;
+}
+
+.cta-forum {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 700px;
+    margin: 60px auto;
+}
+
+.cta-forum h3 {
+    font-family: var(--font-display);
+    color: var(--color-white);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.cta-forum p {
+    font-family: var(--font-main);
+    color: var(--color-white);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-primary-dark);
+    font-family: var(--font-main);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    transition: transform 0.2s ease;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
 }

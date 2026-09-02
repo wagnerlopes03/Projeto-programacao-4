@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/colecao.css">
+    <link rel="stylesheet" href="../../css/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <title>Hi Barbie - Minha Coleção</title>
+</head>
+
+<body class="pagina-colecao-body">
+    <header>
+        <a href="../../index.html" class="logo">Hi Barbie</a>
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../catalogo/listagem.html">Bonecas</a>
+            <a href="../noticias/noticias.html">Notícias</a>
+            <a href="../forum/forum.html">Dreamhouse Chat</a>
+            <a href="perfil.html">Meu Perfil</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="pagina-colecao">
+
+            <div class="colecao-layout">
+
+                <div class="coluna-esquerda">
+                    <div class="secao-form">
+                        <div class="secao-header">
+                            <i class="fa-solid fa-plus"></i>
+                            <h2>Adicionar Boneca</h2>
+                        </div>
+
+                        <form>
+                            <div class="campo-form">
+                                <label for="nome">Nome da Boneca</label>
+                                <input type="text" id="nome" placeholder="Ex: Barbie Sereia">
+                            </div>
+
+                            <div class="campo-form">
+                                <label for="descricao">Descrição</label>
+                                <textarea id="descricao" placeholder="Detalhes sobre essa boneca..."></textarea>
+                            </div>
+
+                            <div class="campo-form">
+                                <label for="categoria">Categoria</label>
+                                <select id="categoria">
+                                    <option value="princesa">Princesa</option>
+                                    <option value="sereia">Sereia</option>
+                                    <option value="colecionavel">Colecionável</option>
+                                    <option value="profissoes">Profissões</option>
+                                    <option value="moda">Moda</option>
+                                    <option value="aventura">Aventura</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-form">
+                                <label for="ano">Ano de aquisição</label>
+                                <input type="number" id="ano" placeholder="2026">
+                            </div>
+
+                            <div class="campo-form">
+                                <label for="foto">Foto</label>
+                                <input type="file" id="foto">
+                            </div>
+
+                            <button type="submit" class="btn-editar-perfil">Adicionar à Coleção</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="coluna-direita">
+                    <h1 class="titulo-colecao">Minha Coleção</h1>
+                    <p class="subtitulo-colecao">12 bonecas cadastradas</p>
+
+                    <div class="grid-colecao">
+                        <div class="card-colecao">
+                            <div class="card-colecao-img">
+                                <img src="" alt="Barbie Sereia">
+                            </div>
+                            <h3>Barbie Sereia</h3>
+                            <span class="tag-categoria">Sereia</span>
+                        </div>
+
+                        <div class="card-colecao">
+                            <div class="card-colecao-img">
+                                <img src="" alt="Barbie Signature 65 Anos">
+                            </div>
+                            <h3>Barbie Signature 65 Anos</h3>
+                            <span class="tag-categoria">Colecionável</span>
+                        </div>
+
+                        <div class="card-colecao">
+                            <div class="card-colecao-img">
+                                <img src="" alt="Barbie Bailarina">
+                            </div>
+                            <h3>Barbie Bailarina</h3>
+                            <span class="tag-categoria">Dança</span>
+                        </div>
+
+                        <div class="card-colecao">
+                            <div class="card-colecao-img">
+                                <img src="" alt="Barbie Astronauta">
+                            </div>
+                            <h3>Barbie Astronauta</h3>
+                            <span class="tag-categoria">Profissões</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Barbie Universe - Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
