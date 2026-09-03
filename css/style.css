@@ -43,7 +43,8 @@
   overflow: hidden;
 }
 
-h2, h3 {
+h2,
+h3 {
   background-image: url('../assets/fundo-de-glitter-rosa-4.jpg');
   background-size: 200px 200px;
   background-repeat: repeat;
@@ -298,6 +299,8 @@ h2, h3 {
   border-radius: 8px;
   transition: all 0.1s ease;
   background-color: (--color-primary-dark);
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary-dark);
 }
 
 .btn-pagina-noticias:active {
@@ -308,4 +311,28 @@ h2, h3 {
 .btn-pagina-noticias:hover {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#canvas-glitter-caindo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  display: none;
+}
+
+#noticias, #bonecas, #contato, footer {
+  position: relative;
+  z-index: 1;
+}
+
+.card-boneca:hover {
+  z-index: 10;
 }
