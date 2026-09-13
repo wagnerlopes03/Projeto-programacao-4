@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/cadastro-bonecas.css}">
+    <title>Barbie - Cadastro</title>
+</head>
+
+<body>
+<header>
+    <h1>Barbielândia</h1>
+    <nav>
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo/cadastro}">Cadastrar bonecas</a>
+        <a th:href="@{/catalogo/listagem}">Listar Bonecas</a>
+        <a th:href="@{/forum/forum}">Dreamhouse Chat</a>
+        <a th:href="@{/catalogo/wiki}"> Notícias e Curiosidades</a>
+    </nav>
+</header>
+
+<h1>Barbie</h1>
+
+<h2>Cadastro de Produtos</h2>
+
+<form th:action="@{/catalogo/salvar}" method="POST">
+
+    <label for="nome">Nome da Boneca:</label>
+    <input type="text" id="nome" name="nome">
+
+    <br><br>
+
+    <label for="descricao-produto">Descrição:</label>
+    <textarea id="descricao-produto" name="descricao-produto"></textarea>
+
+    <br><br>
+
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" name="preco" step="0.01">
+
+    <br><br>
+
+    <label for="categoria-produto">Tema:</label>
+    <select id="categoria-produto" name="categoria-produto">
+        <option value="princesa">Princesa</option>
+        <option value="sereia">Sereia</option>
+        <option value="profissao">Profissões</option>
+        <option value="moda">Moda</option>
+        <option value="aventura">Aventura</option>
+    </select>
+
+    <br><br>
+
+    <label for="estoque">Estoque:</label>
+    <input type="number" id="estoque" name="estoque">
+
+    <br><br>
+
+    <button type="submit">Cadastrar Boneca</button>
+
+</form>
+<footer>
+    <p>&copy; 2026 Barbie - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

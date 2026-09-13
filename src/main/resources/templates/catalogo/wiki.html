@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/global.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/wiki.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+  <title>Barbie World - Detalhes da Boneca</title>
+</head>
+
+<body class="detalhes-page">
+<header>
+  <a th:href="@{/}" class="logo">Hi Barbie</a>
+  <nav>
+    <a th:href="@{/}">Início</a>
+    <a th:href="@{/catalogo/listagem}">Catálogo</a>
+    <a th:href="@{/catalogo/cadastro}">Cadastrar Boneca</a>
+    <a th:href="@{/noticias/noticias}">Notícias</a>
+    <a th:href="@{/forum/forum}">Dreamhouse Chat</a>
+    <a th:href="@{/auth/login}">Login</a>
+  </nav>
+</header>
+
+<main class="detalhes-container">
+  <div class="detalhes-grid">
+    <div class="coluna-imagem">
+      <img th:src="@{/assets/barbie-aniversario-65.jpg}" alt="Barbie Signature 65 Anos">
+    </div>
+    <div class="coluna-info">
+      <span class="tag-colecao">Barbie Signature</span>
+      <h1>Barbie Aniversário de 65 Anos</h1>
+      <p class="subtitulo">Edição comemorativa de colecionador inspirada no maiô listrado original de 1959.</p>
+
+      <h2>Ficha Técnica</h2>
+      <ul class="ficha-tecnica">
+        <li><strong>Ano de Lançamento:</strong> 2024</li>
+        <li><strong>Linha:</strong> Black Label</li>
+        <li><strong>Tipo de Corpo:</strong> Model Muse</li>
+        <li><strong>Molde Facial:</strong> Original 1959 (Vintage Repro)</li>
+        <li><strong>Designer:</strong> Carlyle Nuera</li>
+      </ul>
+
+      <h2>Descrição</h2>
+      <p class="descricao-texto">
+        Celebrando 65 anos de moda e pioneirismo, esta boneca homenageia o traje clássico de 1959 em um vestido de gala preto e branco esculpido com corte sereia. O visual é finalizado com óculos escuros estilo gatinho, brincos de argola retrô e lábios vermelhos marcantes.
+      </p>
+
+      <h2>Itens Inclusos</h2>
+      <ul class="itens-inclusos">
+        <li>Boneca Barbie com vestido de gala</li>
+        <li>Par de sapatos de salto alto</li>
+        <li>Óculos escuros e brincos</li>
+        <li>Suporte de exibição (Stand)</li>
+        <li>Certificado de Autenticidade (COA)</li>
+      </ul>
+
+      <div class="acoes">
+        <button type="button" class="btn-favoritar">❤️ Adicionar à Minha Coleção</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Barbie Portal - Projeto Acadêmico</p>
+</footer>
+
+</body>
+</html>
