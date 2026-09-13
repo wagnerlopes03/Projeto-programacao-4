@@ -29,11 +29,19 @@
         <p class="subtitulo-auth">Entre para acessar sua coleção e o Dreamhouse Chat.</p>
 
         <form th:action="@{/auth/login}" method="POST">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com">
+            <div th:if="${erro}" style="color: #e74c3c; background-color: #fde8e8; padding: 10px; border-radius: 5px; margin-bottom: 15px; text-align: center;">
+                <span th:text="${erro}"></span>
+            </div>
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Sua senha">
+            <div class="campo-form">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="campo-form">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Sua senha" required>
+            </div>
 
             <button type="submit" class="btn-auth">Entrar</button>
         </form>
