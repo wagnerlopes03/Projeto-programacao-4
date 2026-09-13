@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/global.css">
-    <link rel="stylesheet" href="../../css/listagem.css">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/listagem.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
@@ -13,15 +13,15 @@
 </head>
 
 <body class="pagina-bonecas-body">
-    <main>
+<main>
     <header>
-        <a href="../../index.html" class="logo">Hi Barbie</a>
+        <a th:href="@{/}" class="logo">Hi Barbie</a>
         <nav>
-            <a href="../../index.html">Início</a> 
-            <a href="listagem.html">Barbies</a> 
-            <a href="../noticias/noticias.html">Notícias</a> 
-            <a href="../forum/forum.html">Dreamhouse Chat</a>
-            <a href="pages/auth/login.html">Login</a> 
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/catalogo/listagem}">Barbies</a>
+            <a th:href="@{/noticias/noticias}">Notícias</a>
+            <a th:href="@{/forum/forum}">Dreamhouse Chat</a>
+            <a th:href="@{/auth/login}">Login</a>
         </nav>
     </header>
     <section id="pagina-bonecas">
@@ -42,7 +42,7 @@
         <div class="grid-catalogo">
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie of Swan Lake Odette">
+                    <img th:src="@{/assets/odette.jpg}" alt="Barbie of Swan Lake Odette">
                 </div>
                 <span class="card-numero">Nº 001</span>
                 <h3>Barbie of Swan Lake (Odette)</h3>
@@ -54,7 +54,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Signature 65 Anos">
+                    <img th:src="@{/assets/barbie_signature.jpg}" alt="Barbie Signature 65 Anos">
                 </div>
                 <span class="card-numero">Nº 002</span>
                 <h3>Barbie Signature Aniversário de 65 Anos</h3>
@@ -66,7 +66,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Bailarina Loira">
+                    <img th:src="@{/assets/barbie_bailarina.jpg}" alt="Barbie Bailarina Loira">
                 </div>
                 <span class="card-numero">Nº 003</span>
                 <h3>Barbie Bailarina Vestido Rosa</h3>
@@ -78,7 +78,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Astronauta">
+                    <img th:src="@{/assets/barbie_astronauta.jpg}" alt="Barbie Astronauta">
                 </div>
                 <span class="card-numero">Nº 004</span>
                 <h3>Barbie Astronauta</h3>
@@ -90,7 +90,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Médica">
+                    <img th:src="@{/assets/barbie_medica.jpg}" alt="Barbie Médica">
                 </div>
                 <span class="card-numero">Nº 005</span>
                 <h3>Barbie Médica</h3>
@@ -102,7 +102,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Sereia Cor Mágica">
+                    <img th:src="@{/assets/barbie_sereia.jpg}" alt="Barbie Sereia Cor Mágica">
                 </div>
                 <span class="card-numero">Nº 006</span>
                 <h3>Barbie Sereia Cor Mágica</h3>
@@ -114,7 +114,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Color Reveal">
+                    <img th:src="@{/assets/barbie_color_reveal.jpg}" alt="Barbie Color Reveal">
                 </div>
                 <span class="card-numero">Nº 007</span>
                 <h3>Barbie Color Reveal</h3>
@@ -126,7 +126,7 @@
 
             <article class="card-boneca">
                 <div class="card-boneca-img">
-                    <img src="" alt="Barbie Holiday 2026">
+                    <img th:src="@{/assets/barbie_holiday.jpg}" alt="Barbie Holiday 2026">
                 </div>
                 <span class="card-numero">Nº 008</span>
                 <h3>Barbie Holiday 2026</h3>
@@ -139,12 +139,12 @@
         <div class="cta-forum">
             <h3>Tem uma Barbie querida que não está aqui?</h3>
             <p>Compartilhe sua coleção e converse com outros fãs no nosso fórum!</p>
-            <a href="../forum/forum.html" class="btn-cta">Ir para o Dreamhouse Chat</a>
+            <a th:href="@{/forum/forum}" class="btn-cta">Ir para o Dreamhouse Chat</a>
         </div>
     </section>
-    </main>    
-    <footer>
-        <p>&copy; 2026 Barbie - Todos os direitos reservados.</p>
-    </footer>
+</main>
+<footer>
+    <p>&copy; 2026 Barbie - Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>
