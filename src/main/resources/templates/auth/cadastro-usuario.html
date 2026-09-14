@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <title>Hi Barbie - Cadastro</title>
+</head>
+
+<body>
+<header>
+    <a th:href="@{/}" class="logo">Hi Barbie</a>
+    <nav>
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo/listagem}">Bonecas</a>
+        <a th:href="@{/noticias/noticias}">Notícias</a>
+        <a th:href="@{/forum/discussao}">Dreamhouse Chat</a>
+        <a th:href="@{/auth/login}">Login</a>
+    </nav>
+</header>
+
+<section id="pagina-cadastro">
+    <div class="card-auth">
+        <h1>Criar Conta</h1>
+        <p class="subtitulo-auth">Sua Barbie favorita tem uma casa aqui — e uma comunidade te esperando.</p>
+
+        <form th:action="@{/auth/cadastro-usuario}" method="POST">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com">
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha">
+
+            <label for="boneca-favorita">Qual sua Barbie favorita?</label>
+            <input type="text" id="boneca-favorita" name="bonecaFavorita" placeholder="Ex: Barbie Sereia">
+
+            <button type="submit" class="btn-auth">Cadastrar</button>
+        </form>
+
+        <p class="link-alternar">Já tem conta? <a th:href="@{/auth/login}">Fazer login</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Barbie News - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
