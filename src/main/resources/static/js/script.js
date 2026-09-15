@@ -134,3 +134,4 @@ setInterval(criarGlitter, 1);
 
    // animate()
 })();
+

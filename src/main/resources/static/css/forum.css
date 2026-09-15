@@ -4,12 +4,12 @@
     font-size: 42px;
     text-align: center;
     margin: 40px 0 30px;
-    text-shadow: 
-        1px 1px 0 var(--color-primary-dark),
-        2px 2px 0 var(--color-primary-dark),
-        3px 3px 0 var(--color-primary-deep),
-        4px 4px 0 var(--color-primary-deep),
-        5px 5px 5px rgba(0, 0, 0, 0.3);
+    text-shadow:
+            1px 1px 0 var(--color-primary-dark),
+            2px 2px 0 var(--color-primary-dark),
+            3px 3px 0 var(--color-primary-deep),
+            4px 4px 0 var(--color-primary-deep),
+            5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .forum-layout {
@@ -35,6 +35,25 @@
     color: var(--color-primary-dark);
     font-size: 16px;
     margin-bottom: 12px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cta:hover {
+    background-color: var(--color-primary-dark);
 }
 
 .item-categoria {
@@ -179,4 +198,91 @@
 
 .topico-curtidas i {
     font-size: 18px;
+}
+
+#form-novo-topico {
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(214, 0, 110, 0.12);
+}
+
+#form-novo-topico h3 {
+    font-family: var(--font-display);
+    color: var(--color-primary-dark);
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+#form-novo-topico form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#form-novo-topico select {
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 12px;
+    outline: none;
+    background-color: var(--color-white);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+#form-novo-topico select:focus {
+    border-color: var(--color-primary);
+}
+
+#form-novo-topico input[type="text"] {
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#form-novo-topico input[type="text"]:focus {
+    border-color: var(--color-primary);
+}
+
+#form-novo-topico textarea {
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 14px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 14px;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.2s ease;
+}
+
+#form-novo-topico textarea:focus {
+    border-color: var(--color-primary);
+}
+
+#form-novo-topico .btn-auth {
+    align-self: flex-start;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#form-novo-topico .btn-auth:hover {
+    background-color: var(--color-primary-dark);
 }

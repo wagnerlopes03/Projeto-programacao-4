@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/global.css}">
     <link rel="stylesheet" th:href="@{/css/forum.css}">
+    <link rel="stylesheet" th:href="@{/css/discussao.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
@@ -29,7 +30,24 @@
         <h1 class="titulo-pagina">Dreamhouse Chat</h1>
 
         <div style="text-align: center; margin-bottom: 20px;">
-            <a th:href="@{/forum/novo-topico}" class="btn-cta">+ Novo Tópico</a>
+            <button id="btn-abrir-form" class="btn-cta">+ Novo Tópico</button>
+        </div>
+
+        <div class="caixa-resposta" id="form-novo-topico" style="max-width: 600px; margin: 0 auto 30px; display: none;">
+            <h3>Criar novo tópico</h3>
+            <form th:action="@{/forum/novo-topico/salvar}" method="POST">
+                <select name="categoria" required>
+                    <option value="" disabled selected>Escolha uma categoria</option>
+                    <option value="Conversa com Princesas">Conversa com Princesas</option>
+                    <option value="Feira da Genevieve">Feira da Genevieve</option>
+                    <option value="Caça ao Tesouro">Caça ao Tesouro</option>
+                    <option value="SOS com a Fada Madrinha">SOS com a Fada Madrinha</option>
+                    <option value="Bailes da Barbie">Bailes da Barbie</option>
+                </select>
+                <input type="text" name="titulo" placeholder="Título do tópico">
+                <textarea name="texto" placeholder="Escreva aqui..."></textarea>
+                <button type="submit" class="btn-auth">Publicar</button>
+            </form>
         </div>
 
         <div class="forum-layout">
@@ -67,11 +85,11 @@
                 </div>
 
                 <div class="lista-topicos">
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:each="post : ${posts}" th:href="@{/forum/discussao}" class="item-topico">
                         <div class="topico-info">
-                            <span class="topico-categoria">SOS com a Fada Madrinha</span>
-                            <h3>Dicas pra guardar bonecas sem estragar a caixa?</h3>
-                            <span class="topico-meta">por @rosa_pastel · 15 respostas</span>
+                            <span class="topico-categoria" th:text="${post.categoria}">SOS com a Fada Madrinha</span>
+                            <h3 th:text="${post.titulo}">Dicas pra guardar bonecas sem estragar a caixa?</h3>
+                            <span class="topico-meta" th:text="${post.texto}">por @rosa_pastel · 15 respostas</span>
                         </div>
                         <div class="topico-curtidas">
                             <i class="fa-solid fa-heart"></i>
@@ -165,6 +183,8 @@
 <footer>
     <p>&copy; 2026 Hi Barbie - Todos os direitos reservados.</p>
 </footer>
+<script th:src="@{/js/script.js}"></script>
+<script th:src="@{/js/forum.js}"></script>
 </body>
 
 </html>
