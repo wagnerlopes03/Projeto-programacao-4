@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/forum.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+    <title>Hi Barbie - Meus Posts</title>
+</head>
+
+<body>
+<header>
+    <a th:href="@{/}" class="logo">Hi Barbie</a>
+    <nav>
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo/listagem}">Barbies</a>
+        <a th:href="@{/noticias}">Notícias</a>
+        <a th:href="@{/forum}">Dreamhouse Chat</a>
+        <a th:href="@{/user/perfil}">Meu Perfil</a>
+    </nav>
+</header>
+
+<main>
+    <section id="pagina-forum">
+        <h1 class="titulo-pagina">Meus Posts</h1>
+
+        <div class="lista-topicos" style="max-width: 750px; margin: 0 auto;">
+            <a th:href="@{/forum/discussao}" class="item-topico">
+                <div class="topico-info">
+                    <span class="topico-categoria">SOS com a Fada Madrinha</span>
+                    <h3>Dicas pra guardar bonecas sem estragar a caixa?</h3>
+                    <span class="topico-meta">12 respostas</span>
+                </div>
+                <div class="topico-curtidas">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>42</span>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Hi Barbie - Todos os direitos reservados.</p>
+</footer>
+</body>
+
+</html>

@@ -132,5 +132,5 @@ setInterval(criarGlitter, 1);
         requestAnimationFrame(animate);
     }
 
-    animate()
+   // animate()
 })();

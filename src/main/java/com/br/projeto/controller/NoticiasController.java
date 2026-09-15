@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/noticias")
 public class NoticiasController {
 
-    @GetMapping("/noticias")
+    @GetMapping("")
     public String paginaNoticias(){
         return "noticias/noticias";
     }

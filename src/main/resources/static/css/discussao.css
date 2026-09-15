@@ -19,6 +19,26 @@
 .link-voltar:hover {
     gap: 12px;
 }
+#pagina-discussao .caixa-resposta {
+    max-width: 600px;
+    margin: 60px auto;
+}
+
+#pagina-discussao .caixa-resposta input[type="text"] {
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 12px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 12px;
+    outline: none;
+    margin-bottom: 14px;
+    transition: border-color 0.2s ease;
+}
+
+#pagina-discussao .caixa-resposta input[type="text"]:focus {
+    border-color: var(--color-primary);
+}
 
 .discussao-container {
     display: flex;

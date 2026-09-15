@@ -13,17 +13,17 @@
 </head>
 
 <body class="pagina-bonecas-body">
+<header>
+    <a th:href="@{/}" class="logo">Hi Barbie</a>
+    <nav>
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo/listagem}">Barbies</a>
+        <a th:href="@{/noticias}">Notícias</a>
+        <a th:href="@{/forum}">Dreamhouse Chat</a>
+        <a th:href="@{/auth/login}">Login</a>
+    </nav>
+</header>
 <main>
-    <header>
-        <a th:href="@{/}" class="logo">Hi Barbie</a>
-        <nav>
-            <a th:href="@{/}">Início</a>
-            <a th:href="@{/catalogo/listagem}">Barbies</a>
-            <a th:href="@{/noticias/noticias}">Notícias</a>
-            <a th:href="@{/forum/forum}">Dreamhouse Chat</a>
-            <a th:href="@{/auth/login}">Login</a>
-        </nav>
-    </header>
     <section id="pagina-bonecas">
         <h1 class="titulo-pagina">Catálogo de Barbies</h1>
         <div class="busca-container">
@@ -31,16 +31,16 @@
             <i class="fa-solid fa-magnifying-glass icone-busca"></i>
         </div>
         <div class="filtros-categoria">
-            <button class="filtro-pill ativo">Todas</button>
-            <button class="filtro-pill">👑 Princesa</button>
-            <button class="filtro-pill">🧜‍♀️ Sereia</button>
-            <button class="filtro-pill">💃 Dança</button>
-            <button class="filtro-pill">💼 Profissões</button>
-            <button class="filtro-pill">👗 Moda</button>
-            <button class="filtro-pill">🌍 Aventura</button>
+            <button class="filtro-pill ativo" data-categoria="todas">Todas</button>
+            <button class="filtro-pill" data-categoria="princesa">👑 Princesa</button>
+            <button class="filtro-pill" data-categoria="sereia">🧜‍♀️ Sereia</button>
+            <button class="filtro-pill" data-categoria="danca">💃 Dança</button>
+            <button class="filtro-pill" data-categoria="profissoes">💼 Profissões</button>
+            <button class="filtro-pill" data-categoria="moda">👗 Moda</button>
+            <button class="filtro-pill" data-categoria="colecionavel">💎 Colecionável</button>
         </div>
         <div class="grid-catalogo">
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="princesa">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/odette.jpg}" alt="Barbie of Swan Lake Odette">
                 </div>
@@ -52,7 +52,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="colecionavel">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_signature.jpg}" alt="Barbie Signature 65 Anos">
                 </div>
@@ -64,7 +64,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="danca">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_bailarina.jpg}" alt="Barbie Bailarina Loira">
                 </div>
@@ -76,7 +76,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="profissoes">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_astronauta.jpg}" alt="Barbie Astronauta">
                 </div>
@@ -88,7 +88,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="profissoes">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_medica.jpg}" alt="Barbie Médica">
                 </div>
@@ -100,7 +100,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="sereia">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_sereia.jpg}" alt="Barbie Sereia Cor Mágica">
                 </div>
@@ -112,7 +112,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="moda">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_color_reveal.jpg}" alt="Barbie Color Reveal">
                 </div>
@@ -124,7 +124,7 @@
                 </div>
             </article>
 
-            <article class="card-boneca">
+            <article class="card-boneca" data-categoria="colecionavel">
                 <div class="card-boneca-img">
                     <img th:src="@{/assets/barbie_holiday.jpg}" alt="Barbie Holiday 2026">
                 </div>
@@ -139,12 +139,14 @@
         <div class="cta-forum">
             <h3>Tem uma Barbie querida que não está aqui?</h3>
             <p>Compartilhe sua coleção e converse com outros fãs no nosso fórum!</p>
-            <a th:href="@{/forum/forum}" class="btn-cta">Ir para o Dreamhouse Chat</a>
+            <a th:href="@{/forum}" class="btn-cta">Ir para o Dreamhouse Chat</a>
         </div>
     </section>
 </main>
 <footer>
     <p>&copy; 2026 Barbie - Todos os direitos reservados.</p>
 </footer>
+<script th:src="@{/js/filtro-catalogo.js}"></script>
 </body>
+
 </html>
