@@ -53,19 +53,19 @@
         <div class="forum-layout">
             <aside class="sidebar-categorias">
                 <h3>Categorias</h3>
-                <a href="#" class="item-categoria ativo">
+                <a href="#" class="item-categoria ativo" data-categoria="Conversa com Princesas">
                     <i class="fa-solid fa-comments"></i> Conversa com Princesas
                 </a>
-                <a href="#" class="item-categoria">
+                <a href="#" class="item-categoria" data-categoria="Feira da Genevieve">
                     <i class="fa-solid fa-tag"></i> Feira da Genevieve
                 </a>
-                <a href="#" class="item-categoria">
+                <a href="#" class="item-categoria" data-categoria="Caça ao Tesouro">
                     <i class="fa-solid fa-gem"></i> Caça ao Tesouro
                 </a>
-                <a href="#" class="item-categoria">
+                <a href="#" class="item-categoria" data-categoria="SOS com a Fada Madrinha">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> SOS com a Fada Madrinha
                 </a>
-                <a href="#" class="item-categoria">
+                <a href="#" class="item-categoria" data-categoria="Bailes da Barbie">
                     <i class="fa-solid fa-champagne-glasses"></i> Bailes da Barbie
                 </a>
 
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="lista-topicos">
-                    <a th:each="post : ${posts}" th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:each="post : ${posts}" th:href="@{/forum/discussao}" class="item-topico" th:attr="data-categoria=${post.categoria}">
                         <div class="topico-info">
                             <span class="topico-categoria" th:text="${post.categoria}">SOS com a Fada Madrinha</span>
                             <h3 th:text="${post.titulo}">Dicas pra guardar bonecas sem estragar a caixa?</h3>
@@ -96,7 +96,7 @@
                             <span>42</span>
                         </div>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="Conversa com Princesas">
                         <div class="topico-info">
                             <span class="topico-categoria">Conversa com Princesas</span>
                             <h3>Qual filme da Barbie vocês assistiram mais vezes?</h3>
@@ -107,7 +107,7 @@
                             <span>38</span>
                         </div>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="Caça ao Tesouro">
                         <div class="topico-info">
                             <span class="topico-categoria">Caça ao Tesouro</span>
                             <h3>Achei minha Barbie Signature 65 Anos numa garagem sale!</h3>
@@ -118,7 +118,7 @@
                             <span>29</span>
                         </div>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="SOS com a Fada Madrinha">
                         <div class="topico-info">
                             <span class="topico-categoria">SOS com a Fada Madrinha</span>
                             <h3>Como restaurar o cabelo emaranhado da minha Barbie antiga?</h3>
@@ -126,7 +126,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico"  data-categoria="Feira da Genevieve">
                         <div class="topico-info">
                             <span class="topico-categoria">Feira da Genevieve</span>
                             <h3>Troco Barbie Sereia por Barbie Bailarina, alguém?</h3>
@@ -134,7 +134,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="Conversa com Princesas">
                         <div class="topico-info">
                             <span class="topico-categoria">Conversa com Princesas</span>
                             <h3>Qual filme da Barbie vocês assistiram mais vezes?</h3>
@@ -142,7 +142,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="Bailes da Barbie">
                         <div class="topico-info">
                             <span class="topico-categoria">Bailes da Barbie</span>
                             <h3>Alguém vai no Barbie Collector Event esse mês?</h3>
@@ -150,7 +150,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="Caça ao Tesouro">
                         <div class="topico-info">
                             <span class="topico-categoria">Caça ao Tesouro</span>
                             <h3>Procurando a Barbie of Swan Lake original, alguém tem?</h3>
@@ -158,7 +158,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico" data-categoria="SOS com a Fada Madrinha">
                         <div class="topico-info">
                             <span class="topico-categoria">SOS com a Fada Madrinha</span>
                             <h3>Dicas pra guardar bonecas sem estragar a caixa?</h3>
@@ -166,7 +166,7 @@
                         </div>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a th:href="@{/forum/discussao}" class="item-topico">
+                    <a th:href="@{/forum/discussao}" class="item-topico"  data-categoria="Feira da Genevieve">
                         <div class="topico-info">
                             <span class="topico-categoria">Feira da Genevieve</span>
                             <h3>Vendendo lote de Barbies Fashionista, quem se interessa?</h3>
