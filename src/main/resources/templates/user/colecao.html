@@ -37,10 +37,10 @@
                         <h2>Adicionar Boneca</h2>
                     </div>
 
-                    <form th:action="@{/user/colecao/salvar}" method="POST" enctype="multipart/form-data">
+                    <form th:action="@{/user/colecao/salvar}" method="POST">
                         <div class="campo-form">
                             <label for="nome">Nome da Boneca</label>
-                            <input type="text" id="nome" name="nome" placeholder="Ex: Barbie Sereia">
+                            <input type="text" id="nome" name="nome" placeholder="Ex: Barbie Sereia" required>
                         </div>
 
                         <div class="campo-form">
@@ -51,12 +51,12 @@
                         <div class="campo-form">
                             <label for="categoria">Categoria</label>
                             <select id="categoria" name="categoria">
-                                <option value="princesa">Princesa</option>
-                                <option value="sereia">Sereia</option>
-                                <option value="colecionavel">Colecionável</option>
-                                <option value="profissoes">Profissões</option>
-                                <option value="moda">Moda</option>
-                                <option value="aventura">Aventura</option>
+                                <option value="Princesa">Princesa</option>
+                                <option value="Sereia">Sereia</option>
+                                <option value="Colecionável">Colecionável</option>
+                                <option value="Profissões">Profissões</option>
+                                <option value="Moda">Moda</option>
+                                <option value="Aventura">Aventura</option>
                             </select>
                         </div>
 
@@ -66,8 +66,16 @@
                         </div>
 
                         <div class="campo-form">
-                            <label for="foto">Foto</label>
-                            <input type="file" id="foto" name="foto">
+                            <label for="fotoUrl">Link da foto</label>
+                            <input type="text" id="fotoUrl" name="fotoUrl" placeholder="https://...">
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="visibilidade">Visibilidade</label>
+                            <select id="visibilidade" name="visibilidade">
+                                <option value="publico">🌍 Pública</option>
+                                <option value="privado">🔒 Privada</option>
+                            </select>
                         </div>
 
                         <button type="submit" class="btn-editar-perfil">Adicionar à Coleção</button>
@@ -76,40 +84,27 @@
             </div>
 
             <div class="coluna-direita">
-                <h1 class="titulo-colecao">Minha Coleção</h1>
-                <p class="subtitulo-colecao">12 bonecas cadastradas</p>
+                <div class="colecao-topo">
+                    <div>
+                        <h1 class="titulo-colecao">Minha Coleção</h1>
+                        <p class="subtitulo-colecao" th:text="${#lists.size(colecao)} + ' bonecas cadastradas'">0 bonecas cadastradas</p>
+                    </div>
+
+                    <form th:action="@{/user/colecao/visibilidade}" method="POST">
+                        <button type="submit" class="btn-visibilidade" th:classappend="${colecaoPublica} ? 'publica' : 'privada'">
+                            <i class="fa-solid" th:classappend="${colecaoPublica} ? 'fa-earth-americas' : 'fa-lock'"></i>
+                            <span th:text="${colecaoPublica} ? 'Coleção Pública' : 'Coleção Privada'">Status</span>
+                        </button>
+                    </form>
+                </div>
 
                 <div class="grid-colecao">
-                    <div class="card-colecao">
+                    <div class="card-colecao" th:each="boneca : ${colecao}">
                         <div class="card-colecao-img">
-                            <img th:src="@{/assets/barbie_sereia.jpg}" alt="Barbie Sereia">
+                            <img th:src="${boneca.fotoUrl}" th:alt="${boneca.nome}">
                         </div>
-                        <h3>Barbie Sereia</h3>
-                        <span class="tag-categoria">Sereia</span>
-                    </div>
-
-                    <div class="card-colecao">
-                        <div class="card-colecao-img">
-                            <img th:src="@{/assets/barbie_signature.jpg}" alt="Barbie Signature 65 Anos">
-                        </div>
-                        <h3>Barbie Signature 65 Anos</h3>
-                        <span class="tag-categoria">Colecionável</span>
-                    </div>
-
-                    <div class="card-colecao">
-                        <div class="card-colecao-img">
-                            <img th:src="@{/assets/barbie_bailarina.jpg}" alt="Barbie Bailarina">
-                        </div>
-                        <h3>Barbie Bailarina</h3>
-                        <span class="tag-categoria">Dança</span>
-                    </div>
-
-                    <div class="card-colecao">
-                        <div class="card-colecao-img">
-                            <img th:src="@{/assets/barbie_astronauta.jpg}" alt="Barbie Astronauta">
-                        </div>
-                        <h3>Barbie Astronauta</h3>
-                        <span class="tag-categoria">Profissões</span>
+                        <h3 th:text="${boneca.nome}">Nome</h3>
+                        <span class="tag-categoria" th:text="${boneca.categoria}">Categoria</span>
                     </div>
                 </div>
             </div>
@@ -120,7 +115,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2026 Barbie Universe - Todos os direitos reservados.</p>
+    <p>&copy; 2026 Hi Barbie - Todos os direitos reservados.</p>
 </footer>
 </body>
 

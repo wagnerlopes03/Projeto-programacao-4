@@ -49,9 +49,15 @@
                 <p>A Mattel anuncia novas iniciativas para tornar a produção da Barbie mais sustentável e amiga do meio ambiente.</p>
             </article>
         </div>
-        <button class="btn-filtrar">
-            Filtrar <i class="fa-solid fa-filter"></i>
-        </button>
+        <div class="topo-noticias">
+            <button class="btn-filtrar">
+                Filtrar <i class="fa-solid fa-filter"></i>
+            </button>
+            <div class="busca-noticias">
+                <input id="pesquisa-filtro" type="text" placeholder="Buscar notícia...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
         <div class="grid-noticias">
             <article class="card-noticia-grid">
                 <img th:src="@{/assets/barbie_holiday_2026.jpg}" alt="Barbie Holiday Doll 2026">
@@ -130,5 +136,6 @@
 <footer>
     <p>&copy; 2026 Barbie News - Todos os direitos reservados.</p>
 </footer>
+<script th:src="@{/js/noticias.js}"></script>
 </body>
 </html>

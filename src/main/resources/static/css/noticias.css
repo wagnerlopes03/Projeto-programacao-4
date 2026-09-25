@@ -107,9 +107,6 @@
 }
 
 .btn-filtrar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     background-color: var(--color-primary);
     color: var(--color-white);
     font-family: var(--font-main);
@@ -118,7 +115,6 @@
     border: none;
     border-radius: 8px;
     padding: 12px 24px;
-    margin: 0 80px 40px;
     cursor: pointer;
     transition: background-color 0.2s ease;
     position: relative;
@@ -127,6 +123,37 @@
 
 .btn-filtrar:hover {
     background-color: var(--color-primary-dark);
+}
+
+.topo-noticias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 80px;
+}
+
+.busca-noticias {
+    position: relative;
+}
+
+.busca-noticias input {
+    font-family: var(--font-main);
+    font-size: 14px;
+    padding: 10px 40px 10px 16px;
+    border: 2px solid var(--color-pink-light);
+    border-radius: 30px;
+    outline: none;
+    width: 220px;
+}
+
+.busca-noticias i {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    pointer-events: none;
 }
 
 .grid-noticias {
