@@ -31,17 +31,13 @@
         <div class="discussao-container">
 
             <div class="post-original">
-                <span class="topico-categoria">SOS com a Fada Madrinha</span>
-                <h1>Dicas pra guardar bonecas sem estragar a caixa?</h1>
+                <span class="topico-categoria" th:text="${post.categoria}"></span>
+                <h1 th:text="${post.titulo}"></h1>
                 <div class="autor-info">
                     <span class="autor-nome">@rosa_pastel</span>
                     <span class="autor-data">28 de agosto de 2026</span>
                 </div>
-                <p class="post-texto">
-                    Gente, comprei umas bonecas colecionáveis e quero guardar direitinho pra não perder valor.
-                    Alguém tem dica de como guardar as caixas sem elas amassarem ou desbotarem com o tempo?
-                    Vi que algumas pessoas usam saco plástico, outras deixam do jeito que veio. O que vocês fazem?
-                </p>
+                <p class="post-texto" th:text="${post.texto}"></p>
                 <button class="btn-curtir">
                     <i class="fa-solid fa-heart"></i> 42 curtidas
                 </button>
