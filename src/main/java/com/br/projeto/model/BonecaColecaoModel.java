@@ -1,11 +1,45 @@
 package com.br.projeto.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "bonecas")
 public class BonecaColecaoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String nome;
+
     private String descricao;
-    private String categoria;
-    private int ano;
-    private String fotoUrl;
+
+    @Column(name = "id_categoria")
+    private Integer idCategoria;
+
+    private Integer ano;
+
+    @Column(name = "link_foto")
+    private String linkFoto;
+
+    public BonecaColecaoModel() {}
+
+    public BonecaColecaoModel(Integer id, String nome, String descricao, Integer idCategoria, Integer ano, String linkFoto) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.idCategoria = idCategoria;
+        this.ano = ano;
+        this.linkFoto = linkFoto;
+    }
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -13,13 +47,12 @@ public class BonecaColecaoModel {
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public String getCategoria() { return categoria; }
-    public void setCategoria(String categoria) { this.categoria = categoria; }
+    public Integer getIdCategoria() { return idCategoria; }
+    public void setIdCategoria(Integer idCategoria) { this.idCategoria = idCategoria; }
 
-    public int getAno() { return ano; }
-    public void setAno(int ano) { this.ano = ano; }
+    public Integer getAno() { return ano; }
+    public void setAno(Integer ano) { this.ano = ano; }
 
-    public String getFotoUrl() { return fotoUrl; }
-    public void setFotoUrl(String fotoUrl) { this.fotoUrl = fotoUrl; }
-
+    public String getLinkFoto() { return linkFoto; }
+    public void setLinkFoto(String linkFoto) { this.linkFoto = linkFoto; }
 }

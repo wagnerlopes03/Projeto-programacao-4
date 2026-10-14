@@ -30,16 +30,20 @@
 
         <form th:action="@{/auth/cadastro-usuario}" method="POST">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
-
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com">
-
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
             <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Crie uma senha">
-
-            <label for="boneca-favorita">Qual sua Barbie favorita?</label>
-            <input type="text" id="boneca-favorita" name="bonecaFavorita" placeholder="Ex: Barbie Sereia">
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+            <label for="boneca-input">Qual sua Barbie favorita?</label>
+            <input type="text" id="boneca-input" list="listaBonecas" placeholder="Digite para buscar (ex: Odette...)" autocomplete="off">
+            <input type="hidden" id="bonecaFavoritaId" name="bonecaFavorita.id">
+            <datalist id="listaBonecas">
+                <option th:each="b : ${bonecas}" 
+                        th:data-id="${b.id}" 
+                        th:value="${b.nome}">
+                </option>
+            </datalist>
 
             <button type="submit" class="btn-auth">Cadastrar</button>
         </form>
@@ -51,5 +55,21 @@
 <footer>
     <p>&copy; 2026 Barbie News - Todos os direitos reservados.</p>
 </footer>
+<script>
+    document.getElementById('boneca-input').addEventListener('input', function() {
+        var valorDigitado = this.value;
+        var opcoes = document.getElementById('listaBonecas').children;
+        var hiddenInput = document.getElementById('bonecaFavoritaId');
+        
+        hiddenInput.value = "";
+        
+        for (var i = 0; i < opcoes.length; i++) {
+            if (opcoes[i].value === valorDigitado) {
+                hiddenInput.value = opcoes[i].getAttribute('data-id');
+                break;
+            }
+        }
+    });
+</script>
 </body>
 </html>
