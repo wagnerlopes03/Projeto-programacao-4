@@ -1,32 +1,40 @@
 package com.br.projeto.controller;
-import com.br.projeto.model.UsuarioModel;
+
+import java.util.Optional;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model; // <- IMPORT CORRETO DO SPRING
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.br.projeto.model.UsuarioModel;
+import com.br.projeto.repository.BonecaRepository;
+import com.br.projeto.repository.UsuarioRepository;
+
 
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
 
-    private static final List<UsuarioModel> ListaUsuarios = new ArrayList<>();
+    private final UsuarioRepository usuarioRepository;
+    private final BonecaRepository bonecaRepository;
 
-    public static List<UsuarioModel> getListaUsuarios(){
-        return ListaUsuarios;
+    public AuthController(UsuarioRepository usuarioRepository, BonecaRepository bonecaRepository) {
+        this.usuarioRepository = usuarioRepository;
+        this.bonecaRepository = bonecaRepository;
     }
 
     @GetMapping("/cadastro-usuario")
-    public String paginaCadastro(){
+    public String paginaCadastro(Model model) {
+        model.addAttribute("bonecas", bonecaRepository.findAll());
         return "auth/cadastro-usuario";
     }
 
     @PostMapping("/cadastro-usuario")
-    public String cadastrar(UsuarioModel usuario){
-        ListaUsuarios.add(usuario);
+    public String cadastrar(UsuarioModel usuario) {
+        usuarioRepository.save(usuario);
         System.out.println("Novo Usuário Cadastrado: " + usuario.getEmail());
         return "redirect:/auth/login";
     }
@@ -38,14 +46,13 @@ public class AuthController {
 
     @PostMapping("/login")
     public String autenticar(@RequestParam("email") String email,
-                             @RequestParam("senha") String senha,
-                             Model model) {
+            @RequestParam("senha") String senha,
+            Model model) {
 
-        for (UsuarioModel u : ListaUsuarios) {
-            if (u.getEmail() != null && u.getEmail().equals(email) &&
-                    u.getSenha() != null && u.getSenha().equals(senha)) {
-                return "redirect:/user/perfil";
-            }
+        Optional<UsuarioModel> usuario = usuarioRepository.findByEmailAndSenha(email, senha);
+
+        if (usuario.isPresent()) {
+            return "redirect:/user/perfil";
         }
 
         model.addAttribute("erro", "Usuário não encontrado ou senha incorreta!");
@@ -53,7 +60,7 @@ public class AuthController {
     }
 
     @GetMapping("/recuperar-senha")
-    public String paginaRecuperar (){
+    public String paginaRecuperar() {
         return "auth/recuperar-senha";
     }
 }
