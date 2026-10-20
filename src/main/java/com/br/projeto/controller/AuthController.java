@@ -1,7 +1,8 @@
 package com.br.projeto.controller;
 
-import java.util.Optional;
-
+import com.br.projeto.model.UsuarioModel;
+import com.br.projeto.service.BonecaService;
+import com.br.projeto.service.UsuarioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,33 +10,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.br.projeto.model.UsuarioModel;
-import com.br.projeto.repository.BonecaRepository;
-import com.br.projeto.repository.UsuarioRepository;
-
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
 
-    private final UsuarioRepository usuarioRepository;
-    private final BonecaRepository bonecaRepository;
+    private final UsuarioService usuarioService;
+    private final BonecaService bonecaService;
 
-    public AuthController(UsuarioRepository usuarioRepository, BonecaRepository bonecaRepository) {
-        this.usuarioRepository = usuarioRepository;
-        this.bonecaRepository = bonecaRepository;
+    public AuthController(UsuarioService usuarioService, BonecaService bonecaService) {
+        this.usuarioService = usuarioService;
+        this.bonecaService = bonecaService;
     }
 
     @GetMapping("/cadastro-usuario")
     public String paginaCadastro(Model model) {
-        model.addAttribute("bonecas", bonecaRepository.findAll());
+        model.addAttribute("bonecas", bonecaService.listarTodas());
         return "auth/cadastro-usuario";
     }
 
     @PostMapping("/cadastro-usuario")
     public String cadastrar(UsuarioModel usuario) {
-        usuarioRepository.save(usuario);
-        System.out.println("Novo Usuário Cadastrado: " + usuario.getEmail());
+        usuarioService.salvarUsuario(usuario);
         return "redirect:/auth/login";
     }
 
@@ -46,10 +43,10 @@ public class AuthController {
 
     @PostMapping("/login")
     public String autenticar(@RequestParam("email") String email,
-            @RequestParam("senha") String senha,
-            Model model) {
+                             @RequestParam("senha") String senha,
+                             Model model) {
 
-        Optional<UsuarioModel> usuario = usuarioRepository.findByEmailAndSenha(email, senha);
+        Optional<UsuarioModel> usuario = usuarioService.autenticar(email, senha);
 
         if (usuario.isPresent()) {
             return "redirect:/user/perfil";

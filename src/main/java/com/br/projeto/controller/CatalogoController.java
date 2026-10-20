@@ -1,6 +1,8 @@
 package com.br.projeto.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.br.projeto.model.BonecaColecaoModel;
+import com.br.projeto.service.CatalogoService;
+import com.br.projeto.service.CategoriaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,36 +10,34 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.br.projeto.model.BonecaColecaoModel;
-import com.br.projeto.repository.BonecaRepository;
-import com.br.projeto.repository.CategoriaRepository;
-
 @Controller
 @RequestMapping("/catalogo")
 public class CatalogoController {
 
-    @Autowired
-    private BonecaRepository bonecaRepository;
+    private final CatalogoService catalogoService;
+    private final CategoriaService categoriaService;
 
-    @Autowired
-    private CategoriaRepository categoriaRepository;
+    public CatalogoController(CatalogoService catalogoService, CategoriaService categoriaService) {
+        this.catalogoService = catalogoService;
+        this.categoriaService = categoriaService;
+    }
 
     @GetMapping("/cadastro-boneca")
-    public String paginaCadastro(Model model){
+    public String paginaCadastro(Model model) {
         model.addAttribute("boneca", new BonecaColecaoModel());
-        model.addAttribute("categorias", categoriaRepository.findAll());
+        model.addAttribute("categorias", categoriaService.listarTodas());
         return "catalogo/cadastro-boneca";
     }
 
     @PostMapping("/salvar")
     public String salvarBoneca(@ModelAttribute BonecaColecaoModel boneca) {
-        bonecaRepository.save(boneca);
+        catalogoService.salvarBoneca(boneca);
         return "redirect:/catalogo/listagem";
     }
 
     @GetMapping("/listagem")
     public String paginaListagem(Model model) {
-        model.addAttribute("bonecas", bonecaRepository.findAll());
+        model.addAttribute("bonecas", catalogoService.listarTodas());
         return "catalogo/listagem";
     }
 
