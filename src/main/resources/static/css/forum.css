@@ -286,3 +286,29 @@
 #form-novo-topico .btn-auth:hover {
     background-color: var(--color-primary-dark);
 }
+
+.container-btn-novo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.caixa-novo-topico {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    display: none;
+}
+
+.aviso-login-forum {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.aviso-login-forum a {
+    color: #ff69b4;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav-logout {
+    color: #ff4d4d;
+}
