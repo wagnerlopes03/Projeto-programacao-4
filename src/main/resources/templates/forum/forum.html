@@ -21,7 +21,10 @@
         <a th:href="@{/catalogo/listagem}">Barbies</a>
         <a th:href="@{/noticias}">Notícias</a>
         <a th:href="@{/forum}">Dreamhouse Chat</a>
-        <a th:href="@{/auth/login}">Login</a>
+
+        <a th:if="${usuarioLogado == null}" th:href="@{/auth/login}">Login</a>
+        <a th:if="${usuarioLogado != null}" th:href="@{/user/perfil}" th:text="${usuarioLogado.nome}">Perfil</a>
+        <a th:if="${usuarioLogado != null}" th:href="@{/auth/logout}" class="nav-logout">Sair</a>
     </nav>
 </header>
 
@@ -29,25 +32,21 @@
     <section id="pagina-forum">
         <h1 class="titulo-pagina">Dreamhouse Chat</h1>
 
-        <div style="text-align: center; margin-bottom: 20px;">
+        <div th:if="${usuarioLogado != null}" class="container-btn-novo">
             <button id="btn-abrir-form" class="btn-cta">+ Novo Tópico</button>
         </div>
 
-        <div class="caixa-resposta" id="form-novo-topico" style="max-width: 600px; margin: 0 auto 30px; display: none;">
+        <div th:if="${usuarioLogado != null}" class="caixa-resposta caixa-novo-topico" id="form-novo-topico">
             <h3>Criar novo tópico</h3>
             <form th:action="@{/forum/novo-topico/salvar}" method="POST">
-                <select name="categoria" required>
-                    <option value="" disabled selected>Escolha uma categoria</option>
-                    <option value="Conversa com Princesas">Conversa com Princesas</option>
-                    <option value="Feira da Genevieve">Feira da Genevieve</option>
-                    <option value="Caça ao Tesouro">Caça ao Tesouro</option>
-                    <option value="SOS com a Fada Madrinha">SOS com a Fada Madrinha</option>
-                    <option value="Bailes da Barbie">Bailes da Barbie</option>
-                </select>
-                <input type="text" name="titulo" placeholder="Título do tópico">
-                <textarea name="texto" placeholder="Escreva aqui..."></textarea>
+                <input type="text" name="topico" placeholder="Título do tópico" required>
+                <textarea name="descricao" placeholder="Escreva aqui..." required></textarea>
                 <button type="submit" class="btn-auth">Publicar</button>
             </form>
+        </div>
+
+        <div th:if="${usuarioLogado == null}" class="aviso-login-forum">
+            <p>Você precisa estar <a th:href="@{/auth/login}">logado</a> para publicar um novo tópico.</p>
         </div>
 
         <div class="forum-layout">
@@ -85,15 +84,14 @@
                 </div>
 
                 <div class="lista-topicos">
-                    <a th:each="post : ${posts}" th:href="@{'/forum/discussao/' + ${post.id}}" class="item-topico" th:attr="data-categoria=${post.categoria}">
+                    <a th:each="post : ${posts}" th:href="@{'/forum/discussao/' + ${post.id}}" class="item-topico">
                         <div class="topico-info">
-                            <span class="topico-categoria" th:text="${post.categoria}"></span>
-                            <h3 th:text="${post.titulo}"></h3>
-                            <span class="topico-meta" th:text="${post.texto}"></span>
+                            <h3 th:text="${post.topico}"></h3>
+                            <span class="topico-meta" th:text="${post.descricao}"></span>
                         </div>
                         <div class="topico-curtidas">
                             <i class="fa-solid fa-heart"></i>
-                            <span>42</span>
+                            <span>0</span>
                         </div>
                     </a>
                 </div>

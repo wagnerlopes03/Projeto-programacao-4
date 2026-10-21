@@ -20,7 +20,7 @@ public class ForumService {
         return postRepository.findAll();
     }
 
-    public Optional<PostModel> buscarPorId(Long id) {
+    public Optional<PostModel> buscarPorId(Integer id) {
         return postRepository.findById(id);
     }
 
