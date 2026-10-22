@@ -1,11 +1,6 @@
 package com.br.projeto.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,8 +20,13 @@ public class PostModel {
     @Column(name = "data_post", insertable = false, updatable = false)
     private LocalDateTime dataPost;
 
-    @Column(name = "id_usuario")
-    private Integer idUsuario;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private UsuarioModel usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private CategoriaModel categoria;
 
     public PostModel() {
     }
@@ -63,11 +63,19 @@ public class PostModel {
         this.dataPost = dataPost;
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public UsuarioModel getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(UsuarioModel usuario) {
+        this.usuario = usuario;
+    }
+
+    public CategoriaModel getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaModel categoria) {
+        this.categoria = categoria;
     }
 }

@@ -72,7 +72,9 @@ CREATE TABLE
         descricao VARCHAR(255) not null,
         data_post TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         id_usuario INTEGER,
-        FOREIGN KEY (id_usuario) REFERENCES usuario (id) ON DELETE CASCADE
+        id_categoria INTEGER,
+        FOREIGN KEY (id_usuario) REFERENCES usuario (id) ON DELETE CASCADE,
+        FOREIGN KEY (id_categoria) REFERENCES categoria (id) ON DELETE SET NULL
     );
 
 CREATE TABLE

@@ -1,5 +1,6 @@
 package com.br.projeto.service;
 
+import com.br.projeto.model.NoticiaModel;
 import com.br.projeto.model.PostModel;
 import com.br.projeto.repository.PostRepository;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,9 @@ public class ForumService {
 
     public PostModel salvarTopico(PostModel post) {
         return postRepository.save(post);
+    }
+
+    public List<PostModel> buscarUltimasPosts() {
+        return postRepository.findTop3ByOrderByIdDesc();
     }
 }

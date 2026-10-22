@@ -4,6 +4,7 @@ Bem-vindo ao repositório do **Projeto Barbie**! Esta é uma aplicação web des
 
 O sistema funciona como um portal interativo para colecionadores e fãs da franquia, permitindo a exploração de um catálogo de bonecas, o gerenciamento de coleções pessoais, a leitura de notícias e a interação com outros usuários através de um fórum de discussões.
 
+Alunos: Ana Luiza Almeida e Wagner Lopes
 ---
 
 ## 🚀 Funcionalidades da Aplicação

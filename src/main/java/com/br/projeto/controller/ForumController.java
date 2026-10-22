@@ -44,7 +44,7 @@ public class ForumController {
         if (usuarioLogado == null) {
             return "redirect:/auth/login";
         }
-        post.setIdUsuario(usuarioLogado.getId());
+        post.setUsuario(usuarioLogado);
         forumService.salvarTopico(post);
 
         return "redirect:/forum";
