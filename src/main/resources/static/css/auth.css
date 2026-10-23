@@ -91,3 +91,10 @@
     font-weight: 600;
     text-decoration: none;
 }
+
+.erro-campo {
+    color: #a02e2e;
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 600;
+}

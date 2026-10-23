@@ -3,13 +3,13 @@ package com.br.projeto.controller;
 import com.br.projeto.model.UsuarioModel;
 import com.br.projeto.service.BonecaService;
 import com.br.projeto.service.UsuarioService;
-import jakarta.servlet.http.HttpSession; // Importação necessária
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import jakarta.validation.constraints.*;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -27,13 +27,17 @@ public class AuthController {
 
     @GetMapping("/cadastro-usuario")
     public String paginaCadastro(Model model) {
-        model.addAttribute("bonecas", bonecaService.listarTodas());
+        model.addAttribute("usuario", new UsuarioModel());
         return "auth/cadastro-usuario";
     }
 
     @PostMapping("/cadastro-usuario")
-    public String cadastrar(UsuarioModel usuario) {
-        usuarioService.salvarUsuario(usuario);
+    public String cadastrar(@Valid @ModelAttribute("usuario") UsuarioModel usuario,
+                            BindingResult result) {
+        if (result.hasErrors()) {
+            return "auth/cadastro-usuario";
+        }
+
         return "redirect:/auth/login";
     }
 

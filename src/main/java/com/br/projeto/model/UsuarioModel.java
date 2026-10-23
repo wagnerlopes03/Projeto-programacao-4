@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.*;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -17,13 +18,16 @@ public class UsuarioModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
+    @NotBlank(message = "O nome é obrigatório")
+    @Size(min = 3, max = 255, message = "O nome deve ter entre 3 e 255 caracteres")
     private String nome;
 
-    @Column(nullable = false, unique = true)
+    @NotBlank(message = "O e-mail é obrigatório")
+    @Email(message = "Informe um e-mail válido")
     private String email;
 
-    @Column(nullable = false)
+    @NotBlank(message = "A senha é obrigatória")
+    @Size(min = 6, max = 255, message = "A senha deve ter no mínimo 6 caracteres")
     private String senha;
 
     @ManyToOne
