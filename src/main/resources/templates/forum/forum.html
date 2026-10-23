@@ -36,11 +36,23 @@
             <button id="btn-abrir-form" class="btn-cta">+ Novo Tópico</button>
         </div>
 
-        <div th:if="${usuarioLogado != null}" class="caixa-resposta caixa-novo-topico" id="form-novo-topico">
+        <div th:if="${usuarioLogado != null}" class="caixa-resposta caixa-novo-topico" id="form-novo-topico"
+             th:style="${abrirForm} ? 'display:block;' : 'display:none;'">
             <h3>Criar novo tópico</h3>
-            <form th:action="@{/forum/novo-topico/salvar}" method="POST">
-                <input type="text" name="topico" placeholder="Título do tópico" required>
-                <textarea name="descricao" placeholder="Escreva aqui..." required></textarea>
+            <form th:action="@{/forum/novo-topico/salvar}" th:object="${post}" method="POST">
+
+                <select name="categoria.id">
+                    <option value="" disabled selected>Escolha uma categoria</option>
+                    <option th:each="c : ${categorias}" th:value="${c.id}" th:text="${c.nome}"></option>
+                </select>
+                <small class="erro-campo" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></small>
+
+                <input type="text" th:field="*{topico}" placeholder="Título do tópico">
+                <small class="erro-campo" th:if="${#fields.hasErrors('topico')}" th:errors="*{topico}"></small>
+
+                <textarea th:field="*{descricao}" placeholder="Escreva aqui..."></textarea>
+                <small class="erro-campo" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></small>
+
                 <button type="submit" class="btn-auth">Publicar</button>
             </form>
         </div>
@@ -84,10 +96,12 @@
                 </div>
 
                 <div class="lista-topicos">
-                    <a th:each="post : ${posts}" th:href="@{'/forum/discussao/' + ${post.id}}" class="item-topico">
+                    <a th:each="post : ${posts}" th:href="@{'/forum/discussao/' + ${post.id}}" class="item-topico"
+                       th:attr="data-categoria=${post.categoria?.nome}">
                         <div class="topico-info">
+                            <span class="topico-categoria" th:text="${post.categoria?.nome}"></span>
                             <h3 th:text="${post.topico}"></h3>
-                            <span class="topico-meta" th:text="${post.descricao}"></span>
+                            <span class="topico-meta" th:text="'por ' + ${post.usuario?.nome}"></span>
                         </div>
                         <div class="topico-curtidas">
                             <i class="fa-solid fa-heart"></i>

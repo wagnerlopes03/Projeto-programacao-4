@@ -12,4 +12,6 @@ public interface PostRepository extends JpaRepository<PostModel, Integer> {
     List<PostModel> findByTopicoContainingIgnoreCase(String topico);
 
     List<PostModel> findTop3ByOrderByIdDesc();
+
+    boolean existsByUsuario_IdAndTopicoIgnoreCaseAndCategoria_Id(Integer usuarioId, String topico, Integer categoriaId);
 }

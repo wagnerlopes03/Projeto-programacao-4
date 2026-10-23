@@ -25,8 +25,19 @@ public class ForumService {
         return postRepository.findById(id);
     }
 
-    public PostModel salvarTopico(PostModel post) {
-        return postRepository.save(post);
+    public boolean salvarTopico(PostModel post) {
+        boolean duplicado = postRepository.existsByUsuario_IdAndTopicoIgnoreCaseAndCategoria_Id(
+                post.getUsuario().getId(),
+                post.getTopico().trim(),
+                post.getCategoria().getId()
+        );
+
+        if (duplicado) {
+            return false;
+        }
+
+        postRepository.save(post);
+        return true;
     }
 
     public List<PostModel> buscarUltimasPosts() {
