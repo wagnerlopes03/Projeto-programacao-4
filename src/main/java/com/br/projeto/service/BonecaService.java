@@ -18,4 +18,8 @@ public class BonecaService {
     public List<BonecaColecaoModel> listarTodas() {
         return bonecaRepository.findAll();
     }
+
+    public List<BonecaColecaoModel> buscarPorCategoria(String categoria){
+       return bonecaRepository.findByCategoria_Nome(categoria);
+    }
 }

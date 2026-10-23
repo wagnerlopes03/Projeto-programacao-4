@@ -1,11 +1,6 @@
 package com.br.projeto.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "bonecas")
@@ -19,8 +14,9 @@ public class BonecaColecaoModel {
 
     private String descricao;
 
-    @Column(name = "id_categoria")
-    private Integer idCategoria;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private CategoriaModel categoria;
 
     private Integer ano;
 
@@ -28,15 +24,6 @@ public class BonecaColecaoModel {
     private String linkFoto;
 
     public BonecaColecaoModel() {}
-
-    public BonecaColecaoModel(Integer id, String nome, String descricao, Integer idCategoria, Integer ano, String linkFoto) {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.idCategoria = idCategoria;
-        this.ano = ano;
-        this.linkFoto = linkFoto;
-    }
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
@@ -47,8 +34,8 @@ public class BonecaColecaoModel {
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public Integer getIdCategoria() { return idCategoria; }
-    public void setIdCategoria(Integer idCategoria) { this.idCategoria = idCategoria; }
+    public CategoriaModel getCategoria() { return categoria; }
+    public void setCategoria(CategoriaModel categoria) { this.categoria = categoria; }
 
     public Integer getAno() { return ano; }
     public void setAno(Integer ano) { this.ano = ano; }

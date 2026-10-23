@@ -4,6 +4,10 @@ import org.springframework.stereotype.Repository;
 
 import com.br.projeto.model.BonecaColecaoModel;
 
+import java.util.List;
+
 @Repository
 public interface BonecaRepository extends JpaRepository<BonecaColecaoModel, Integer> {
+
+    List<BonecaColecaoModel> findByCategoria_Nome(String nome);
 }

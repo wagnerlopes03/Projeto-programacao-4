@@ -87,7 +87,7 @@
     <section id="forum-preview">
         <h2>Rolando no Dreamhouse Chat</h2>
         <div class="forum-preview-container">
-            <a th:each="post : ${posts}" th:href="@{/forum/}" class="card-forum-preview">
+            <a th:each="post : ${posts}" th:href="@{/forum}" class="card-forum-preview">
                 <span class="topico-categoria" th:text="${post.categoria.nome}"></span>
                 <h3 th:text="${post.topico}"></h3>
                 <div class="forum-preview-footer">
