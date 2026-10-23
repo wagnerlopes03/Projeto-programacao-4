@@ -49,7 +49,7 @@
                     <h3 th:text="${boneca.nome}">Nome da Boneca</h3>
                     <p th:text="${boneca.descricao}">Descrição da boneca</p>
                     <div class="card-tags">
-                        <span class="tag-categoria" th:text="${boneca.idCategoria}">Categoria</span>
+                        <span class="tag-categoria" th:attr="data-categoria=${boneca.categoria?.nome}">Categoria</span>
                         <span class="tag-disponivel disponivel"
                             th:text="${boneca.ano != null ? boneca.ano : 'Ano N/I'}">2023</span>
                     </div>
