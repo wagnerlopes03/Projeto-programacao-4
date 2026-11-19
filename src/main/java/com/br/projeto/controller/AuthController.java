@@ -37,7 +37,7 @@ public class AuthController {
         if (result.hasErrors()) {
             return "auth/cadastro-usuario";
         }
-
+        usuarioService.salvarUsuario(usuario);
         return "redirect:/auth/login";
     }
 
